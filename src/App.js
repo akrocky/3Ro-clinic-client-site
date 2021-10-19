@@ -17,11 +17,15 @@ import Appointment from './pages/Appointment/Appointment';
 import NotFound from './pages/NotFound/NotFound';
 import Services from './pages/Services/Services/Services';
 import ServiceDetails from './pages/Services/ServiceDetails/ServiceDetails';
+import AuthProvider from './context/AuthProvider';
+import Login from './pages/Login/Login';
+import Register from './pages/Register/Register';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div >
-   
+    <AuthProvider>
     <Router>
       <Header></Header>
       <Switch>
@@ -36,25 +40,33 @@ function App() {
         </Route>
         
        
-        <Route exact path="/services">
+        <PrivateRoute exact path="/services">
 <Services></Services>
-        </Route>
-        <Route path="/services/:serviceinfo">
+        </PrivateRoute>
+        <Route path="/services/:id">
 <ServiceDetails></ServiceDetails>
         </Route>
         <Route path="/aboutus">
 <AboutUs></AboutUs>
         </Route>
-        <Route path="/appointment">
+        <PrivateRoute path="/appointment">
 <Appointment></Appointment>
-        </Route>
+        </PrivateRoute>
+        <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register">
+           <Register></Register>
+          </Route>
         <Route path="*">
 <NotFound></NotFound>
         </Route>
       </Switch>
       <Footer></Footer>
     </Router>
+    </AuthProvider>
     </div>
+    
   );
 }
 

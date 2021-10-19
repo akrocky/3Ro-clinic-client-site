@@ -10,13 +10,13 @@ const Service = (props) => {
         history.push(`/services/${id}`)
     }
     return (
-        <div className='m-5'>
-          <Container>
+        <div className='m-5 col-lg-3'>
+          
           <img height="250px" width="250px" className='img-fliud' src={icon} alt="" />
           <h3 className='text-center'>{title}</h3>
 
-         <button className='ms-5' onClick={handleLink}>see more...</button>
-          </Container>
+         <div className='ms-5'><button className='ms-5' onClick={handleLink}>see more...</button>
+          </div>
 
         </div>
     );

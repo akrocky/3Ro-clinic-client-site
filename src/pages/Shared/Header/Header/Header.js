@@ -1,10 +1,13 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import useAuth from '../../../../hooks/useAuth';
 import './Header.css'
 
 const Header = () => {
+  const {user, logOut}=useAuth()
+  console.log(user);
     return (
         <Navbar bg="dark" variant="dark" expand="lg">
   <Container>
@@ -23,10 +26,20 @@ const Header = () => {
       </Nav>
     </Navbar.Collapse>
     <Navbar.Collapse className="justify-content-end">
-    <i className="fas fa-shopping-cart text-white "></i>
+    
       <Navbar.Text className='text-white'>
-        Signed in as: <a href="#login">Mark Otto</a>
+        
+        {
+          user.email ? <div>
+          <span className='me-2'>{user.displayName}</span>
+           <button onClick={logOut}>Log Out</button> 
+           </div>
+           : <button><Link className='text-black' to="/login">Sign In</Link></button>
+
+
+        }
       </Navbar.Text>
+
     </Navbar.Collapse>
   </Container>
 </Navbar>

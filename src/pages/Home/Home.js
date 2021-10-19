@@ -14,16 +14,21 @@ const Home = () => {
 </p>
            </Container>
           {/* experts */}
-          <div className='my-3 d-flex justify-content-center '>
-              <div>
-              <h1 className='text-center'>Our Experts</h1>
-              <div className='mt-5 mb-1'>
-                  <img  width="300px " height="300px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnT52dIoVce5E5hC1SOqJf9NHNmz-0Xy9Adw&usqp=CAU" alt="" />
-                  <img className='mx-5' width="300px" height="300px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtBJC3vtjrPHDF9NBZ7Or8qkaW-KNYerR-g&usqp=CAU" alt="" />
-                  <img width="300px" height="300px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGOCsf3rf7cjD_L3Z4SUoTAcsjqqWB82PYhQ&usqp=CAU" alt="" />
+          <div className='my-3  '>
+          <h1 className='text-center'>Our Experts</h1>
+              <Container>
+              <div className='row m-sm-2'>
+              <div className="col-lg-4">
+              <img  className='w-100'  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnT52dIoVce5E5hC1SOqJf9NHNmz-0Xy9Adw&usqp=CAU" alt="" />
               </div>
-              <button><Link style={{"textDecoration":"none","color":"black"}} to="/doctors">read more...</Link></button>
+              <div className="col-lg-4 my-sm-2 "><img  className='w-100' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtBJC3vtjrPHDF9NBZ7Or8qkaW-KNYerR-g&usqp=CAU" alt="" /></div>
+              <div className="col-lg-4"><img className='w-100'height="415px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGOCsf3rf7cjD_L3Z4SUoTAcsjqqWB82PYhQ&usqp=CAU" alt=""/> </div>
+            
               </div>
+              </Container>
+              
+             
+            <div className='text-center mt-2'>  <button><Link style={{"textDecoration":"none","color":"black"}} to="/doctors">read more...</Link></button></div>
           </div>
             
 
