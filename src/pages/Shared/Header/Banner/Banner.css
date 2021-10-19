@@ -1,0 +1,14 @@
+.banner{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAI5pENz3kFLgMLi18PLm7HXowdhVY_giHjw&usqp=CAU);
+    background-repeat: no-repeat;
+   
+    background-size: cover;
+    height: 600px;
+    position: relative;
+}
+.banner-text{
+    position: absolute;
+    left: 20%;
+   bottom: 35%;
+  
+}
